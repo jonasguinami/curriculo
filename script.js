@@ -11,11 +11,12 @@ let currentLang = 'pt'; // Idioma padrão
 const translations = {
     pt: {
         // PERFIL
-        role: "Full Stack Developer | Python | IA | Web Developer",
+        role: "Engenheiro de Software | Backend & Pesquisa Aplicada em IA",
         age: "21 Anos",
         country: "Brasil (RS)",
-        tagAi: "IA/ML (Treinando)",
-        tagC: "C/C++ (Aprendendo)",
+        tagAi: "Sistemas de IA & LLM Fine Tuning",
+        tagC: "Linguagens de Baixo Nível (C/C++)",
+        tagDb: "Arquitetura de Banco de Dados (SQLite)",
         
         // CONTATO
         btnWa: "WhatsApp",
@@ -55,11 +56,12 @@ const translations = {
         }
     },
     en: {
-        role: "Full Stack Developer | Python | AI | Web Developer",
+        role: "Software Engineer | Backend & Applied AI Research",
         age: "21 Years",
         country: "Brazil (RS)",
-        tagAi: "AI/ML (Training)",
-        tagC: "C/C++ (Learning)",
+        tagAi: "AI Systems & LLM Fine-tuning",
+        tagC: "Low-level Languages (C/C++)",
+        tagDb: "Database Architecture (SQLite)",
         
         btnWa: "WhatsApp",
         btnEmail: "Email",
@@ -94,11 +96,12 @@ const translations = {
         }
     },
     es: {
-        role: "Desarrollador Full Stack | Python | IA | Web Developer",
+        role: "Especialista en Software | Backend & Investigación Aplicada en IA",
         age: "21 Años",
         country: "Brasil (RS)",
-        tagAi: "IA/ML (Entrenando)",
-        tagC: "C/C++ (Aprendiendo)",
+        tagAi: "Sistemas de IA & Ajuste Fino de LLM",
+        tagC: "Lenguajes de Bajo Nivel (C/C++)",
+        tagDb: "Arquitectura de Bases de Datos (SQLite)",
         
         btnWa: "WhatsApp",
         btnEmail: "Correo",
@@ -133,11 +136,12 @@ const translations = {
         }
     },
     zh: {
-        role: "全栈开发人员 | Python | 人工智能 | Web 开发",
+        role: "软件工程师 | 后端 & 应用型人工智能研究",
         age: "21 岁",
         country: "巴西 (南里奥格兰德州)",
-        tagAi: "AI/ML (训练中)",
-        tagC: "C/C++ (学习中)",
+        tagAi: "人工智能系统 & LLM 微调",
+        tagC: "低级语言 (C/C++)",
+        tagDb: "数据库架构 (SQLite)",
         
         btnWa: "WhatsApp",
         btnEmail: "电子邮件",
@@ -309,6 +313,7 @@ function changeLang(lang) {
     setText('txt-country', t.country);
     setText('tag-ai', t.tagAi);
     setText('tag-c', t.tagC);
+    setText('tag-db', t.tagDb);
     setText('txt-cert-title', t.certTitle);
     setText('txt-dir', t.dirCert);
     setText('txt-git-title', t.gitTitle);
