@@ -1,0 +1,737 @@
+/* =========================================
+   1. CONFIGURAÇÃO DE TEMAS E VARIÁVEIS
+   ========================================= */
+:root {
+    /* --- TEMA LIGHT (Padrão) --- */
+    --bg-body: #ffffff;
+    --bg-header: linear-gradient(to right, #ffffff 60%, #f7f7f7 40%);
+    --bg-card: #ffffff;
+    --bg-card-hover: #fcfcfc;
+    --bg-grid: #e0e0e0; /* Bordas e linhas */
+    
+    --text-primary: #161616;
+    --text-secondary: #525252;
+    --text-meta: #999999;
+    
+    --accent: #0f62fe; /* Azul IBM (Main) */
+    --accent-hover: #0043ce;
+    
+    /* GitHub Section Colors */
+    --github-bg: #161616;
+    --github-text: #ffffff;
+    --github-border: #393939;
+    --github-hover: #262626;
+
+    /* Skeleton Loading */
+    --skeleton-base: #e0e0e0;
+    --skeleton-shine: #f5f5f5;
+}
+
+/* --- TEMA DARK (Ativado via JS) --- */
+body.dark-theme {
+    --bg-body: #161616;
+    --bg-header: #161616;
+    --bg-card: #262626;
+    --bg-card-hover: #353535;
+    --bg-grid: #393939;
+    
+    --text-primary: #f4f4f4;
+    --text-secondary: #c6c6c6;
+    --text-meta: #8d8d8d;
+    
+    --accent: #4589ff; /* Azul mais claro para contraste */
+    --accent-hover: #78a9ff;
+
+    --github-bg: #000000;
+    --github-text: #f4f4f4;
+    --github-border: #393939;
+    --github-hover: #161616;
+
+    --skeleton-base: #262626;
+    --skeleton-shine: #393939;
+}
+
+/* =========================================
+   2. RESET E BASE
+   ========================================= */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+body { 
+    font-family: 'IBM Plex Sans', sans-serif; 
+    background-color: var(--bg-body); 
+    color: var(--text-primary);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    /* Transição suave ao trocar de tema */
+    transition: background-color 0.3s ease, color 0.3s ease; 
+}
+
+a { 
+    text-decoration: none; 
+    color: inherit; 
+}
+
+.container { 
+    width: 100%; 
+    max-width: 1200px; 
+    margin: 0 auto; 
+    padding: 0 1.5rem; 
+}
+
+.hero-tag {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.875rem;
+    color: var(--accent);
+    letter-spacing: 0.5px;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.mono-tag { 
+    font-family: 'IBM Plex Mono', monospace; 
+    font-size: 0.8rem; 
+    color: var(--accent); 
+    letter-spacing: 0.5px; 
+    line-height: 1.4;
+}
+
+/* =========================================
+   3. COMPONENTES DE UI
+   ========================================= */
+
+/* --- Botão Flutuante de Tema --- */
+.theme-btn {
+    position: fixed; 
+    top: 1.5rem; 
+    right: 1.5rem; 
+    z-index: 1000;
+    background: var(--bg-card); 
+    border: 1px solid var(--bg-grid);
+    color: var(--text-primary); 
+    padding: 0.5rem; 
+    border-radius: 50%;
+    cursor: pointer; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    transition: all 0.3s;
+}
+
+.theme-btn:hover { 
+    border-color: var(--accent); 
+    color: var(--accent); 
+}
+
+/* Lógica de Ícones do Tema */
+body:not(.dark-theme) .icon-moon { display: none; }
+body.dark-theme .icon-sun { display: none; }
+
+
+/* =========================================
+   3.5 TRADUÇÕES
+   ========================================= */
+
+.lang-panel {
+    position: fixed;
+    top: 1.5rem;
+    left: 1.5rem;
+    z-index: 1001; /* Acima de tudo */
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    
+    background-color: var(--bg-card); /* Fundo sólido para não misturar com scroll */
+    padding: 0.5rem 0.8rem;
+    border: 1px solid var(--bg-grid);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05); /* Sombra leve */
+}
+
+.lang-btn {
+    background: transparent;
+    border: none;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    cursor: pointer;
+    padding: 0.2rem 0.4rem;
+    transition: all 0.2s;
+}
+
+.lang-btn:hover {
+    color: var(--accent);
+}
+
+.lang-btn.active {
+    color: var(--accent);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.lang-divider {
+    color: var(--bg-grid);
+    font-size: 0.8rem;
+}
+
+/* =========================================
+   4. HERO SECTION (CABEÇALHO)
+   ========================================= */
+.hero-section {
+    padding: 6rem 0 5rem 0;
+    border-bottom: 1px solid var(--bg-grid);
+    background: var(--bg-header);
+}
+
+.hero-wrapper { 
+    display: grid; 
+    grid-template-columns: 1.2fr 0.8fr; 
+    gap: 4rem; 
+    align-items: center; 
+}
+
+/* Tipografia */
+.main-title {
+    font-size: clamp(2.5rem, 5vw, 4.5rem); 
+    font-weight: 300; 
+    line-height: 1.1; 
+    margin: 1.5rem 0; 
+    letter-spacing: -1px;
+    color: var(--text-primary);
+}
+
+.profile-info-block {
+    margin-bottom: 2.5rem; 
+    padding-left: 1.5rem; 
+    border-left: 3px solid var(--accent);
+}
+
+.meta-row {
+    display: flex; 
+    align-items: center; 
+    gap: 0.5rem; 
+    font-size: 1rem; 
+    color: var(--text-secondary); 
+    margin-bottom: 0.5rem; 
+    font-weight: 500;
+}
+
+.role-highlight { 
+    font-size: 1.25rem; 
+    font-weight: 400; 
+    color: var(--text-primary); 
+    line-height: 1.4; 
+}
+
+/* Foto do Perfil */
+.hero-image { 
+    display: flex; 
+    justify-content: center; 
+    position: relative; 
+}
+
+.photo-frame { 
+    position: relative; 
+    width: 100%; 
+    max-width: 320px; 
+    aspect-ratio: 3 / 4; 
+    background: var(--bg-grid); 
+    z-index: 2; 
+}
+
+.profile-pic { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    object-position: top center; 
+    filter: grayscale(100%) contrast(1.1); 
+    transition: filter 0.4s ease; 
+    display: block; 
+}
+
+.profile-pic:hover { 
+    filter: grayscale(0%) contrast(1); 
+}
+
+.frame-decor { 
+    position: absolute; 
+    bottom: -20px; 
+    right: -20px; 
+    width: 60%; 
+    height: 60%; 
+    border-right: 2px solid var(--accent); 
+    border-bottom: 2px solid var(--accent); 
+    z-index: 1; 
+}
+
+/* =========================================
+   5. BOTÕES DE CONTATO (NOVO)
+   ========================================= */
+.contact-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 2rem;
+    align-items: center;
+}
+
+.contact-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1.5rem;
+    
+    background: transparent;
+    border: 1px solid var(--bg-grid);
+    color: var(--text-secondary);
+    
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 140px;
+}
+
+.contact-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    transform: translateY(-2px);
+    background-color: rgba(15, 98, 254, 0.05); /* Leve tint azul */
+}
+
+/* Estilo específico para o botão de Download */
+.contact-btn.download {
+    border-color: var(--text-primary);
+    color: var(--text-primary);
+}
+
+.contact-btn.download:hover {
+    background-color: var(--text-primary);
+    color: var(--bg-body); /* Inverte cor */
+}
+
+/* =========================================
+   6. SEÇÃO PRINCIPAL & FILTROS
+   ========================================= */
+/* --- SECTION HEADERS --- */
+.section-header {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; /* Centralizado verticalmente */
+    border-top: 1px solid var(--text-primary); 
+    margin: 5rem 0 2.5rem 0; 
+    padding-top: 1.5rem;
+    flex-wrap: wrap; /* Garante que não quebre se a tela for muito pequena */
+    gap: 1rem; /* Espaço mínimo entre titulo e tag */
+}
+
+.section-title { 
+    font-size: 1.75rem; 
+    font-weight: 400; 
+    text-transform: uppercase; 
+    letter-spacing: -0.5px; 
+    line-height: 1.2;
+    gap: 12px;
+}
+
+.section-title svg.title-icon {
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+    color: var(--github-text); /* Segue a cor do texto da seção dark */
+}
+
+/* Filtros (Tags) */
+.filters-container {
+    display: flex; 
+    gap: 1rem; 
+    flex-wrap: wrap; 
+    margin-bottom: 2rem;
+}
+
+.filter-btn {
+    background: transparent; 
+    border: 1px solid var(--bg-grid);
+    color: var(--text-secondary); 
+    padding: 0.5rem 1rem;
+    font-family: 'IBM Plex Mono', monospace; 
+    font-size: 0.8rem;
+    cursor: pointer; 
+    transition: all 0.2s ease;
+}
+
+.filter-btn:hover, 
+.filter-btn:focus { 
+    border-color: var(--accent); 
+    color: var(--accent); 
+}
+
+.filter-btn.active { 
+    background: var(--accent); 
+    color: #fff; 
+    border-color: var(--accent); 
+}
+
+/* =========================================
+   7. CERTIFICADOS (GRID)
+   ========================================= */
+.cert-grid {
+    display: grid; 
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1px; 
+    background-color: var(--bg-grid); 
+    border: 1px solid var(--bg-grid); 
+    margin-bottom: 3rem;
+}
+
+.cert-card {
+    background: var(--bg-card); 
+    padding: 2rem; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: space-between;
+    height: 100%; 
+    min-height: 220px; 
+    transition: background 0.2s;
+}
+
+.cert-card:hover { 
+    background-color: var(--bg-card-hover); 
+}
+
+.cert-id { 
+    font-family: 'IBM Plex Mono', monospace; 
+    color: var(--text-meta); 
+    font-size: 0.75rem; 
+    margin-bottom: 0.75rem; 
+    display: block; 
+}
+
+.cert-card h3 { 
+    font-size: 1.05rem; 
+    font-weight: 600; 
+    color: var(--text-primary); 
+    margin-bottom: 2rem; 
+    line-height: 1.4; 
+}
+
+.btn-open {
+    font-family: 'IBM Plex Mono', monospace; 
+    font-size: 0.75rem; 
+    color: var(--accent);
+    border: 1px solid var(--accent); 
+    padding: 0.6rem 1rem; 
+    width: fit-content;
+    display: flex; 
+    align-items: center; 
+    gap: 0.5rem; 
+    transition: 0.3s; 
+    text-transform: uppercase;
+}
+
+.btn-open:hover { 
+    background: var(--accent); 
+    color: #fff; 
+}
+
+/* Controles (Carregar Mais/Menos) */
+.controls-container { 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    gap: 1.5rem; 
+    padding-bottom: 4rem; 
+}
+
+.btn-ghost {
+    background: transparent; 
+    border: none; 
+    cursor: pointer;
+    font-family: 'IBM Plex Mono', monospace; 
+    color: var(--text-secondary); 
+    font-size: 0.85rem;
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    gap: 0.4rem;
+    padding: 0.5rem 1rem; 
+    transition: all 0.3s; 
+    letter-spacing: 0.5px;
+}
+
+.btn-ghost:hover { 
+    color: var(--accent); 
+    transform: translateY(-2px); 
+}
+
+/* =========================================
+   8. GITHUB SECTION & SKELETON
+   ========================================= */
+.github-section { 
+    background-color: var(--github-bg); 
+    color: var(--github-text); 
+    padding: 6rem 0; 
+    margin-top: 2rem; 
+}
+
+.section-header.dark-mode { 
+    border-top-color: var(--github-text); 
+}
+
+.project-link {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    padding: 2rem 0; 
+    border-bottom: 1px solid var(--github-border); 
+    color: var(--github-text);
+    transition: all 0.3s cubic-bezier(0.2, 0, 0.38, 0.9);
+}
+
+.project-link:hover { 
+    padding-left: 1.5rem; 
+    background-color: var(--github-hover); 
+    border-bottom-color: var(--accent); 
+}
+
+.proj-info { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 0.4rem; 
+}
+
+.proj-name { 
+    font-size: 1.3rem; 
+    font-weight: 400; 
+}
+
+.proj-tech { 
+    font-family: 'IBM Plex Mono', monospace; 
+    color: #888; 
+    font-size: 0.8rem; 
+    letter-spacing: 1px; 
+}
+
+.proj-icon { 
+    opacity: 0.6; 
+    transition: 0.3s; 
+    transform: rotate(-45deg); 
+    min-width: 24px; 
+    color: var(--github-text); 
+}
+
+.project-link:hover .proj-icon { 
+    opacity: 1; 
+    color: var(--accent); 
+    transform: rotate(0deg) scale(1.1); 
+}
+
+.status-ok { color: #42be65; }
+
+/* Animação Skeleton Loading */
+.skeleton-wrapper { 
+    width: 100%; 
+    display: flex; 
+    flex-direction: column; 
+}
+
+.skeleton-item {
+    height: 80px; 
+    width: 100%; 
+    margin-bottom: 1px;
+    background: var(--github-border); 
+    position: relative; 
+    overflow: hidden;
+    border-bottom: 1px solid #000;
+}
+
+.skeleton-item::after {
+    content: ""; 
+    position: absolute; 
+    top: 0; left: 0; 
+    width: 100%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.05), transparent);
+    animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer { 
+    0% { transform: translateX(-100%); } 
+    100% { transform: translateX(100%); } 
+}
+
+/* --- SKILLS TAGS --- */
+.skills-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.skill-tag {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.75rem;
+    background: var(--bg-grid);
+    color: var(--text-primary);
+    padding: 0.3rem 0.6rem;
+    border-radius: 2px;
+    border: 1px solid transparent; /* Para não pular no hover */
+    transition: all 0.2s;
+}
+
+.skill-tag:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: var(--bg-card);
+}
+
+/*SVG'S TITULOS*/
+
+.section-title {
+    display: flex;
+    align-items: center; /* Alinha ícone e texto na horizontal */
+}
+
+.skill-tag {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0.4rem 0.8rem; /* Aumentei um pouco o padding para acomodar o ícone */
+}
+
+/* Tamanho fixo para não ficarem gigantes */
+.skill-tag svg {
+    width: 16px; 
+    height: 16px;
+    flex-shrink: 0;
+    display: block;
+}
+
+/* =========================================
+   9. FOOTER
+   ========================================= */
+.main-footer { 
+    padding: 4rem 0; 
+    background: var(--bg-body); 
+    text-align: center; 
+    border-top: 1px solid var(--bg-grid); 
+}
+
+.footer-text { 
+    color: var(--text-secondary); 
+    font-size: 0.75rem; 
+}
+
+/* =========================================
+   10. MOBILE / RESPONSIVO
+   ========================================= */
+
+@media (max-width: 900px) {
+    /* --- HEADER & HERO --- */
+    .hero-section { 
+        background: var(--bg-body); 
+        padding: 5rem 0 3rem 0; /* Espaço para o menu fixo não tapar */
+        text-align: left; /* Mantém alinhamento à esquerda (Estilo Desktop) */
+    }
+    
+    .hero-wrapper { 
+        display: flex; 
+        flex-direction: column-reverse; /* Foto sobe, Texto desce */
+        gap: 2.5rem; 
+    }
+    
+    .hero-text {
+        align-items: flex-start; /* Força alinhamento à esquerda */
+        width: 100%;
+    }
+
+    /* Ajuste dos botões fixos para não atrapalhar */
+    .theme-btn { top: 1rem; right: 1rem; }
+    .lang-panel { top: 1rem; left: 1rem; padding: 0.3rem 0.5rem; }
+
+    /* FOTO NO TOPO */
+    .hero-image {
+        width: 100%;
+        display: flex;
+        justify-content: center; /* Foto centralizada fica melhor */
+        margin-bottom: 1rem;
+    }
+    .photo-frame { 
+        max-width: 240px; /* Um pouco menor para mobile */
+    }
+
+    /* --- PERFIL COM A LINHA AZUL (IGUAL DESKTOP) --- */
+    .profile-info-block { 
+        /* RESTAURA A LINHA AZUL NA LATERAL */
+        border-left: 3px solid var(--accent) !important; 
+        border-top: none !important;
+        
+        padding-left: 1.5rem; /* Espaço entre linha e texto */
+        padding-top: 0;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        
+        align-items: flex-start; /* Alinha itens à esquerda */
+        display: flex; 
+        flex-direction: column; 
+        width: 100%;
+    }
+
+    .role-highlight {
+        font-size: 1.1rem; /* Ajuste leve de fonte */
+    }
+
+    /* TAGS DE SKILLS */
+    .skills-wrapper {
+        justify-content: flex-start; /* Alinha à esquerda junto com a linha */
+    }
+
+    /* --- BOTÕES DE CONTATO --- */
+    .contact-grid { 
+        justify-content: flex-start; /* Alinha à esquerda */
+        width: 100%;
+        gap: 0.8rem;
+    }
+    
+    .contact-btn {
+        width: 100%; /* Botões ocupam largura total para facilitar o toque */
+        justify-content: center; /* Texto do botão no meio */
+        max-width: none; /* Remove limite de largura */
+    }
+
+    /* --- TÍTULOS E TAGS DAS SEÇÕES --- */
+    .section-header {
+        flex-direction: column; 
+        align-items: flex-start; 
+        gap: 0.5rem;
+        margin-top: 4rem;
+    }
+    
+    .section-title {
+        font-size: 1.5rem;
+    }
+    
+    .mono-tag {
+        text-align: left;
+        width: 100%;
+        opacity: 0.8;
+    }
+
+    /* --- GRIDS E LISTAS --- */
+    .cert-grid { grid-template-columns: 1fr; }
+    
+    /* GitHub Links */
+    .project-link { padding: 1.5rem 0; }
+    .proj-name { font-size: 1.1rem; }
+    /* Mantém a seta visível mas alinhada */
+    .proj-icon { 
+        display: block; 
+        margin-left: 0.5rem; 
+        min-width: 20px;
+    }
+}

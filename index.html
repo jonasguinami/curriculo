@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Jonas Guinami</title>
+    <meta name="description" content="Portfolio de Desenvolvedor Full Stack - Jonas Matheus Souza Guinami">
+    
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="lang-panel">
+    <button class="lang-btn active" onclick="changeLang('pt')">PT</button>
+    <span class="lang-divider">|</span>
+    <button class="lang-btn" onclick="changeLang('en')">EN</button>
+    <span class="lang-divider">|</span>
+    <button class="lang-btn" onclick="changeLang('es')">ES</button>
+    <span class="lang-divider">|</span>
+    <button class="lang-btn" onclick="changeLang('zh')">ZH</button>
+        </div>
+
+    <button id="theme-toggle" class="theme-btn" aria-label="Alternar Tema">
+        <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+    </button>
+
+    <header class="hero-section">
+        <div class="container hero-wrapper">
+            <div class="hero-text">
+                <p class="hero-tag">:: SYSTEM_USER_ID // 2004_JG</p>
+                
+                <h1 class="main-title">Jonas Matheus<br>Souza Guinami</h1>
+                
+                <div class="profile-info-block">
+                        <div class="meta-row">
+                            <span class="info-item" id="txt-age">21 Anos</span>
+                            <span class="separator">/</span>
+                            <span class="info-item" id="txt-country">Brasil (RS)</span>
+                        </div>
+                        
+                        <p class="role-highlight" id="txt-role">Full Stack Developer | Python | AI | Web Developer</p>
+                        
+                            <div class="skills-wrapper">
+        <span class="skill-tag">
+            <svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024"><g fill="currentColor" fill-rule="evenodd"><path d="M555 790.5c0 15.74 12.76 28.5 28.5 28.5s28.5-12.76 28.5-28.5s-12.76-28.5-28.5-28.5s-28.5 12.76-28.5 28.5m-143-557c0 15.74 12.76 28.5 28.5 28.5s28.5-12.76 28.5-28.5s-12.76-28.5-28.5-28.5s-28.5 12.76-28.5 28.5"/><path d="M821.524 297.714h-95.238v-95.238c0-49.905-40.572-90.476-90.476-90.476H388.19c-49.904 0-90.476 40.571-90.476 90.476v95.238h-95.238c-49.905 0-90.476 40.572-90.476 90.476v247.62c0 49.904 40.571 90.476 90.476 90.476h95.238v95.238c0 49.905 40.572 90.476 90.476 90.476h247.62c49.904 0 90.476-40.571 90.476-90.476v-95.238h95.238c49.905 0 90.476-40.572 90.476-90.476V388.19c0-49.904-40.571-90.476-90.476-90.476M202.476 669.143c-18.38 0-33.333-14.953-33.333-33.333V388.19c0-18.38 14.952-33.333 33.333-33.333h278.572c15.81 0 28.571-12.762 28.571-28.571s-12.762-28.572-28.571-28.572h-126.19v-95.238c0-18.38 14.952-33.333 33.332-33.333h247.62c18.38 0 33.333 14.952 33.333 33.333v256.476c0 13.524-10.953 24.477-24.476 24.477H379.333c-45.047 0-81.619 36.666-81.619 81.619v104.095zm652.381-33.333c0 18.38-14.952 33.333-33.333 33.333H542.952c-15.81 0-28.571 12.762-28.571 28.571s12.762 28.572 28.571 28.572h126.19v95.238c0 18.38-14.952 33.333-33.332 33.333H388.19c-18.38 0-33.333-14.952-33.333-33.333V565.048c0-13.524 10.953-24.477 24.476-24.477h265.334c45.047 0 81.619-36.666 81.619-81.619V354.857h95.238c18.38 0 33.333 14.953 33.333 33.333z"/></g></svg>
+            Python (Flask)
+        </span>
+        <span class="skill-tag" id="tag-ai">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16v-6a2 2 0 1 1 4 0v6m-4-3h4m4-5v8"/></svg>
+            <span>IA/ML (Training)</span>
+        </span>
+        <span class="skill-tag">
+            <svg xmlns="http://www.w3.org/2000/svg" width="640" height="512" viewBox="0 0 640 512"><path fill="currentColor" d="m407.906 319.913l-230.8-2.928a4.58 4.58 0 0 1-3.632-1.926a4.65 4.65 0 0 1-.494-4.147a6.14 6.14 0 0 1 5.361-4.076l232.94-2.936c27.631-1.26 57.546-23.574 68.022-50.784l13.286-34.542a7.9 7.9 0 0 0 .524-2.936a7.7 7.7 0 0 0-.164-1.631A151.91 151.91 0 0 0 201.257 198.4A68.12 68.12 0 0 0 94.2 269.59C41.924 271.106 0 313.728 0 366.12a96 96 0 0 0 1.029 13.958a4.51 4.51 0 0 0 4.445 3.871l426.1.051c.043 0 .08-.019.122-.02a5.61 5.61 0 0 0 5.271-4l3.273-11.265c3.9-13.4 2.448-25.8-4.1-34.9c-6.016-8.392-16.05-13.328-28.234-13.902m105.95-98.813c-2.141 0-4.271.062-6.391.164a3.77 3.77 0 0 0-3.324 2.653l-9.077 31.193c-3.9 13.4-2.449 25.786 4.1 34.89c6.02 8.4 16.054 13.323 28.238 13.9l49.2 2.939a4.49 4.49 0 0 1 3.51 1.894a4.64 4.64 0 0 1 .514 4.169a6.15 6.15 0 0 1-5.351 4.075l-51.125 2.939c-27.754 1.27-57.669 23.574-68.145 50.784l-3.695 9.606a2.716 2.716 0 0 0 2.427 3.68c.046 0 .088.017.136.017h175.91a4.69 4.69 0 0 0 4.539-3.37a124.8 124.8 0 0 0 4.682-34C640 277.3 583.524 221.1 513.856 221.1"/></svg>
+            Cloudflare
+        </span>
+        <span class="skill-tag">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12v6s0 3 7 3s7-3 7-3v-6"/><path d="M5 6v6s0 3 7 3s7-3 7-3V6"/><path d="M12 3c7 0 7 3 7 3s0 3-7 3s-7-3-7-3s0-3 7-3Z"/></g></svg>
+            SQLite
+        </span>
+        <span class="skill-tag" id="tag-c">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"><path stroke-linejoin="round" d="m7 8l-4 4l4 4"/><path d="m10.5 18l3-12"/><path stroke-linejoin="round" d="m17 8l4 4l-4 4"/></g></svg>
+            <span>C/C++ (Learning)</span>
+        </span>
+    </div>
+
+                    </div>
+
+                    <div class="contact-grid">
+                        <a href="https://wa.me/5551996618743" target="_blank" class="contact-btn" id="btn-wa">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.05 12.05 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.03 12.03 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                            WhatsApp
+                        </a>
+
+                        <a href="mailto:guinamijonas@gmail.com" class="contact-btn" id="btn-email">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                            Email
+                        </a>
+
+                        <a href="curriculo.pdf" download="Currículo_Jonas_Guinami.pdf" class="contact-btn download" id="btn-cv">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                            Download CV
+                        </a>
+                    </div>
+                
+            </div>
+
+            <div class="hero-image">
+                <div class="photo-frame">
+                    <img src="facemepeb.webp" alt="Foto de Jonas Guinami" class="profile-pic" width="320" height="426">
+                    <div class="frame-decor"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="section-header">
+            <h2 class="section-title" id="txt-cert-title">Certificações & Skills</h2>
+            <span class="mono-tag" id="txt-dir">DIR: ./MEUS CERTIFICADOS</span>
+        </div>
+
+        <div class="filters-container">
+            <button class="filter-btn active" data-filter="all">ALL FILES</button>
+            <button class="filter-btn" data-filter="ia">AI & DATA</button>
+            <button class="filter-btn" data-filter="frontend">FRONT-END</button>
+            <button class="filter-btn" data-filter="backend">BACK-END</button>
+            <button class="filter-btn" data-filter="geral">GENERAL</button>
+        </div>
+
+        <div class="cert-grid" id="cert-list">
+            </div>
+
+        <div class="controls-container">
+            <button id="btn-load-less" class="btn-ghost" style="display: none;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="18 15 12 9 6 15"></polyline></svg>
+                MOSTRAR MENOS
+            </button>
+            
+            <button id="btn-load-more" class="btn-ghost">
+                CARREGAR MAIS (+4)
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+        </div>
+    </main>
+
+    <section class="github-section">
+        <div class="container">
+            <div class="section-header dark-mode">
+    <h2 class="section-title" id="txt-git-title">
+                    <span>Repositórios GitHub</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="title-icon">
+                        <path fill="currentColor" d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.11.38-2 1.03-2.71c-.1-.25-.45-1.29.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.35.2 2.39.1 2.64c.65.71 1.03 1.6 1.03 2.71c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"/>
+                    </svg>
+                </h2>
+                <span class="mono-tag status-ok" id="github-status">SYNCING...</span>
+            </div>
+            
+            <div id="github-list" class="repo-list">
+                <div class="skeleton-wrapper">
+                    <div class="skeleton-item"></div>
+                    <div class="skeleton-item"></div>
+                    <div class="skeleton-item"></div>
+                    <div class="skeleton-item"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p class="mono-tag footer-text" id="txt-footer">SYSTEM END OF FILE // DEVELOPED BY JONAS GUINAMI</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
