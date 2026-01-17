@@ -234,7 +234,15 @@ const certificados = [
 // =========================================
 document.addEventListener("DOMContentLoaded", () => {
     listaAtual = [...certificados];
-    atualizarTela(); 
+    
+    // 1. Detecta o idioma do navegador ou usa PT como padrão
+    const userLang = navigator.language.startsWith('en') ? 'en' : 
+                     navigator.language.startsWith('es') ? 'es' : 
+                     navigator.language.startsWith('zh') ? 'zh' : 'pt';
+    
+    // 2. Roda a tradução inicial imediatamente
+    changeLang(userLang); 
+
     carregarGithub();
     initTheme();
     
@@ -281,15 +289,14 @@ function changeLang(lang) {
     currentLang = lang;
     const t = translations[lang];
 
-    // Atualiza botões do topo (active class)
+    // Atualiza a classe 'active' nos botões de idioma
     const btns = document.querySelectorAll('.lang-btn');
     btns.forEach(b => b.classList.remove('active'));
     
-    if(btns.length >= 4) {
-        if(lang === 'pt') btns[0].classList.add('active');
-        if(lang === 'en') btns[1].classList.add('active');
-        if(lang === 'es') btns[2].classList.add('active');
-        if(lang === 'zh') btns[3].classList.add('active');
+    // Ativa o botão correto baseado na string 'lang'
+    const langIndex = { 'pt': 0, 'en': 1, 'es': 2, 'zh': 3 };
+    if(btns[langIndex[lang]]) {
+        btns[langIndex[lang]].classList.add('active');
     }
 
     // Função segura para trocar texto pelo ID
