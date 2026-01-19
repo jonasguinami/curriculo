@@ -1,6 +1,4 @@
-// =========================================
 // 1. CONFIGURAÇÃO E DADOS
-// =========================================
 const caminhoPasta = "./"; 
 const qtdInicial = 4;
 let limiteAtual = qtdInicial;
@@ -51,10 +49,36 @@ const translations = {
             "Certificado-Engenharia-de-Prompt-Udemy": "Engenharia de Prompt para IA",
             "Certificado-Figma-100-horas-Udemy": "Figma & UI Design (100h)",
             "Certificado-PHP-Udemy": "PHP 7 & 8 Completo",
-            "Certificado-Redes-TCP-IP-Udemy": "Fundamentos de Redes TCP/IP"
+            "Certificado-Redes-TCP-IP-Udemy": "Fundamentos de Redes TCP/IP",
+            "Faculdade-Ciência-da-Computação": "Bacharelado em Ciência da Computação"
             // (Os que não estiverem aqui usarão o nome do arquivo formatado automaticamente)
         }
-    },
+
+        
+        // PROJETOS DESTAQUE
+        ,
+        featuredTitle: "Projetos em Destaque",
+        featuredTag: "EXPERIMENTAL / PESQUISA",
+        
+        proj01: { 
+            title: "GuinaOS: Web Criptografado VM", 
+            desc: "Construção de VM com ISA própria, Kernel e VFS criptografado em camadas de isolamento.",
+            cat: "SISTEMAS"
+        },
+        proj02: { 
+            title: "FreeWill: IA Autônoma", 
+            desc: "Pesquisa em fine-tuning de modelos locais treinados em bases massivas de conteúdos.",
+            cat: "IA/ML"
+        },
+        proj03: { 
+            title: "GuinaCoin.ai (GNC)", 
+            desc: "Plataforma Blockchain com protocolo 'Proof-of-Utility' para mineração via treinamento de IA.",
+            cat: "FINTECH"
+        }
+
+    }
+    
+    ,
     en: {
         role: "Software Engineer | Backend & Applied AI Research",
         age: "21 Years",
@@ -92,9 +116,32 @@ const translations = {
             "Certificado-Engenharia-de-Prompt-Udemy": "AI Prompt Engineering",
             "Certificado-Figma-100-horas-Udemy": "Figma & UI Design (100h)",
             "Certificado-PHP-Udemy": "Complete PHP 7 & 8",
-            "Certificado-Redes-TCP-IP-Udemy": "TCP/IP Network Fundamentals"
+            "Certificado-Redes-TCP-IP-Udemy": "TCP/IP Network Fundamentals",
+            "Faculdade-Ciência-da-Computação": "Bachelor's in Computer Science"
         }
+
+        // PROJETOS DESTAQUE
+        ,
+        featuredTitle: "Featured Projects",
+        featuredTag: "EXPERIMENTAL / RESEARCH",
+        proj01: { 
+            title: "GuinaOS: Web Encrypted VM", 
+            desc: "Construction of VM with custom ISA, Kernel and layered encrypted VFS isolation.",
+            cat: "SYSTEMS"
+        },
+        proj02: {
+            title: "FreeWill: Autonomous AI",
+            desc: "Research on fine-tuning local models trained on massive content bases.",
+            cat: "AI/ML"
+        },
+        proj03: {
+            title: "GuinaCoin.ai (GNC)",
+            desc: "Blockchain platform with 'Proof-of-Utility' protocol for mining via AI training.",
+            cat: "FINTECH"
+        }
+
     },
+    
     es: {
         role: "Especialista en Software | Backend & Investigación Aplicada en IA",
         age: "21 Años",
@@ -132,9 +179,32 @@ const translations = {
             "Certificado-Engenharia-de-Prompt-Udemy": "Ingeniería de Prompts para IA",
             "Certificado-Figma-100-horas-Udemy": "Figma y Diseño UI (100h)",
             "Certificado-PHP-Udemy": "PHP 7 y 8 Completo",
-            "Certificado-Redes-TCP-IP-Udemy": "Fundamentos de Redes TCP/IP"
+            "Certificado-Redes-TCP-IP-Udemy": "Fundamentos de Redes TCP/IP",
+            "Faculdade-Ciência-da-Computação": "Licenciatura en Ciencias de la Computación"
         }
+
+        // PROJETOS DESTAQUE
+        ,
+        featuredTitle: "Proyectos Destacados",
+        featuredTag: "EXPERIMENTAL / INVESTIGACIÓN",
+        proj01: { 
+            title: "GuinaOS: VM Encriptada Web", 
+            desc: "Construcción de VM con ISA propia, Kernel y VFS encriptado en capas de aislamiento.",
+            cat: "SISTEMAS"
+        },
+        proj02: { 
+            title: "FreeWill: IA Autónoma",
+            desc: "Investigación en ajuste fino de modelos locales entrenados en grandes bases de datos de contenido.",
+            cat: "IA/ML"
+        },
+        proj03: { 
+            title: "GuinaCoin.ai (GNC)",
+            desc: "Plataforma Blockchain con protocolo 'Proof-of-Utility' para minería mediante entrenamiento de IA.",
+            cat: "FINTECH"
+        }
+
     },
+    
     zh: {
         role: "软件工程师 | 后端 & 应用型人工智能研究",
         age: "21 岁",
@@ -172,7 +242,28 @@ const translations = {
             "Certificado-Engenharia-de-Prompt-Udemy": "AI 提示工程",
             "Certificado-Figma-100-horas-Udemy": "Figma 与 UI 设计 (100小时)",
             "Certificado-PHP-Udemy": "PHP 7 & 8 完整教程",
-            "Certificado-Redes-TCP-IP-Udemy": "TCP/IP 网络基础"
+            "Certificado-Redes-TCP-IP-Udemy": "TCP/IP 网络基础",
+            "Faculdade-Ciência-da-Computação": "计算机科学学士学位"
+        }
+
+        // PROJETOS DESTAQUE
+        ,
+        featuredTitle: "精选项目",
+        featuredTag: "实验性 / 研究",
+        proj01: { 
+            title: "GuinaOS: Web 加密虚拟机",
+            desc: "构建具有自定义 ISA、内核和分层加密 VFS 隔离的虚拟机模拟。",
+            cat: "系统"
+        },
+        proj02: { 
+            title: "FreeWill: 自主 AI",
+            desc: "基于大规模内容库训练的本地模型微调研究。",
+            cat: "人工智能/机器学习"
+        },
+        proj03: {
+            title: "GuinaCoin.ai (GNC)",
+            desc: "具有 'Proof-of-Utility' 协议的区块链平台，通过 AI 训练进行挖矿。",
+            cat: "金融科技"
         }
     }
 };
@@ -186,6 +277,7 @@ const certificados = [
     "Certificado-Java-Masterclass-130-hours-english-Udemy",
     
     // TIER A
+    "Faculdade-Ciência-da-Computação",
     "Certificado-Ensino-Médio-Jonas-Guinami",
     "Certificado-Desenvolvimento-Web-120-horas-Udemy",
     "Certificado-Inglês-800-diálogos+270-horas-Udemy",
@@ -229,9 +321,7 @@ const certificados = [
     "Certificado-IEL"
 ];
 
-// =========================================
 // 2. INICIALIZAÇÃO E EVENTOS
-// =========================================
 document.addEventListener("DOMContentLoaded", () => {
     listaAtual = [...certificados];
     
@@ -282,14 +372,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-// =========================================
 // 3. CORE DE TRADUÇÃO (I18N)
-// =========================================
 function changeLang(lang) {
     currentLang = lang;
     const t = translations[lang];
 
-    // Atualiza a classe 'active' nos botões de idioma
+    // Atualiza a classe "active" nos botões de idioma
     const btns = document.querySelectorAll('.lang-btn');
     btns.forEach(b => b.classList.remove('active'));
     
@@ -299,7 +387,7 @@ function changeLang(lang) {
         btns[langIndex[lang]].classList.add('active');
     }
 
-    // Função segura para trocar texto pelo ID
+    // Função para trocar texto pelo ID
     const setText = (id, text) => {
         const el = document.getElementById(id);
         if(el) {
@@ -325,6 +413,17 @@ function changeLang(lang) {
     setText('txt-dir', t.dirCert);
     setText('txt-git-title', t.gitTitle);
     setText('txt-footer', t.footer);
+    setText('txt-featured-title', t.featuredTitle);
+    setText('txt-featured-tag', t.featuredTag);
+    setText('proj-title-01', t.proj01.title);
+    setText('proj-desc-01', t.proj01.desc);
+    setText('tag-cat-01', t.proj01.cat);
+    setText('proj-title-02', t.proj02.title);
+    setText('proj-desc-02', t.proj02.desc);
+    setText('tag-cat-02', t.proj02.cat);
+    setText('proj-title-03', t.proj03.title);
+    setText('proj-desc-03', t.proj03.desc);
+    setText('tag-cat-03', t.proj03.cat);
 
     // Traduções de Botões com SVG
     const updateBtnHTML = (id, text) => {
@@ -361,9 +460,8 @@ function changeLang(lang) {
     atualizarTela();
 }
 
-// =========================================
-// 4. LÓGICA DE LISTAGEM
-// =========================================
+
+// 4. LÓGICA DE LISTAGEM E FILTRAGEM
 function aplicarFiltro(categoria) {
     if (categoria === 'all') {
         listaAtual = [...certificados];
@@ -405,8 +503,8 @@ function atualizarTela() {
         let nomeArquivoReal = nomeBase + ".pdf";
         let linkHref = caminhoPasta + encodeURIComponent(nomeArquivoReal);
         
-        // --- AQUI ESTÁ A LÓGICA DE TRADUÇÃO DO TÍTULO ---
-        // Verifica se existe tradução no dicionário 'certNames'. Se não, usa regex padrão.
+        // LÓGICA DE TRADUÇÃO DO TÍTULO 
+        // Verifica se existe tradução no dicionário "certNames". Se não, usa regex padrão.
         let tituloDisplay = (t.certNames && t.certNames[nomeBase]) 
             ? t.certNames[nomeBase] 
             : nomeBase.replace(/^\d+\.\s*/, '').replace(/-/g, ' '); 
@@ -439,9 +537,7 @@ function atualizarTela() {
     }
 }
 
-// =========================================
-// 5. GITHUB & TEMA
-// =========================================
+// 5. GITHUB E TEMA
 function carregarGithub() {
     const user = "jonasguinami";
     const gitList = document.getElementById('github-list');

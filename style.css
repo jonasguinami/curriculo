@@ -1,8 +1,6 @@
-/* =========================================
-   1. CONFIGURAÇÃO DE TEMAS E VARIÁVEIS
-   ========================================= */
+/* 1. CONFIGURAÇÃO DE TEMAS E VARIÁVEIS */
 :root {
-    /* --- TEMA LIGHT (Padrão) --- */
+    /* TEMA LIGHT (Padrão) */
     --bg-body: #ffffff;
     --bg-header: linear-gradient(to right, #ffffff 60%, #f7f7f7 40%);
     --bg-card: #ffffff;
@@ -27,7 +25,7 @@
     --skeleton-shine: #f5f5f5;
 }
 
-/* --- TEMA DARK (Ativado via JS) --- */
+/* TEMA DARK (Ativado via JS) */
 body.dark-theme {
     --bg-body: #161616;
     --bg-header: #161616;
@@ -39,7 +37,7 @@ body.dark-theme {
     --text-secondary: #c6c6c6;
     --text-meta: #8d8d8d;
     
-    --accent: #4589ff; /* Azul mais claro para contraste */
+    --accent: #4589ff;
     --accent-hover: #78a9ff;
 
     --github-bg: #000000;
@@ -51,9 +49,7 @@ body.dark-theme {
     --skeleton-shine: #393939;
 }
 
-/* =========================================
-   2. RESET E BASE
-   ========================================= */
+/* 2. RESET E BASE */
 * { 
     margin: 0; 
     padding: 0; 
@@ -66,7 +62,6 @@ body {
     color: var(--text-primary);
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
-    /* Transição suave ao trocar de tema */
     transition: background-color 0.3s ease, color 0.3s ease; 
 }
 
@@ -99,11 +94,8 @@ a {
     line-height: 1.4;
 }
 
-/* =========================================
-   3. COMPONENTES DE UI
-   ========================================= */
+/* 3. COMPONENTES DE UI */
 
-/* --- Botão Flutuante de Tema --- */
 .theme-btn {
     position: fixed; 
     top: 1.5rem; 
@@ -126,28 +118,25 @@ a {
     color: var(--accent); 
 }
 
-/* Lógica de Ícones do Tema */
 body:not(.dark-theme) .icon-moon { display: none; }
 body.dark-theme .icon-sun { display: none; }
 
 
-/* =========================================
-   3.5 TRADUÇÕES
-   ========================================= */
+/* TRADUÇÕES */
 
 .lang-panel {
     position: fixed;
     top: 1.5rem;
     left: 1.5rem;
-    z-index: 1001; /* Acima de tudo */
+    z-index: 1001; 
     display: flex;
     align-items: center;
     gap: 0.5rem;
     
-    background-color: var(--bg-card); /* Fundo sólido para não misturar com scroll */
+    background-color: var(--bg-card); 
     padding: 0.5rem 0.8rem;
     border: 1px solid var(--bg-grid);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05); /* Sombra leve */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05); 
 }
 
 .lang-btn {
@@ -177,9 +166,7 @@ body.dark-theme .icon-sun { display: none; }
     font-size: 0.8rem;
 }
 
-/* =========================================
-   4. HERO SECTION (CABEÇALHO)
-   ========================================= */
+/* 4. HERO SECTION (CABEÇALHO) */
 .hero-section {
     padding: 6rem 0 5rem 0;
     border-bottom: 1px solid var(--bg-grid);
@@ -193,7 +180,6 @@ body.dark-theme .icon-sun { display: none; }
     align-items: center; 
 }
 
-/* Tipografia */
 .main-title {
     font-size: clamp(2.5rem, 5vw, 4.5rem); 
     font-weight: 300; 
@@ -226,7 +212,6 @@ body.dark-theme .icon-sun { display: none; }
     line-height: 1.4; 
 }
 
-/* Foto do Perfil */
 .hero-image { 
     display: flex; 
     justify-content: center; 
@@ -267,9 +252,7 @@ body.dark-theme .icon-sun { display: none; }
     z-index: 1; 
 }
 
-/* =========================================
-   5. BOTÕES DE CONTATO (NOVO)
-   ========================================= */
+/* 5. BOTÕES DE CONTATO (NOVO) */
 .contact-grid {
     display: flex;
     flex-wrap: wrap;
@@ -302,10 +285,9 @@ body.dark-theme .icon-sun { display: none; }
     border-color: var(--accent);
     color: var(--accent);
     transform: translateY(-2px);
-    background-color: rgba(15, 98, 254, 0.05); /* Leve tint azul */
+    background-color: rgba(15, 98, 254, 0.05); 
 }
 
-/* Estilo específico para o botão de Download */
 .contact-btn.download {
     border-color: var(--text-primary);
     color: var(--text-primary);
@@ -313,22 +295,21 @@ body.dark-theme .icon-sun { display: none; }
 
 .contact-btn.download:hover {
     background-color: var(--text-primary);
-    color: var(--bg-body); /* Inverte cor */
+    color: var(--bg-body);
 }
 
-/* =========================================
-   6. SEÇÃO PRINCIPAL & FILTROS
-   ========================================= */
-/* --- SECTION HEADERS --- */
+/* 6. SEÇÃO PRINCIPAL & FILTROS */
+
+/* SECTION HEADERS */
 .section-header {
     display: flex; 
     justify-content: space-between; 
-    align-items: center; /* Centralizado verticalmente */
+    align-items: center; 
     border-top: 1px solid var(--text-primary); 
     margin: 5rem 0 2.5rem 0; 
     padding-top: 1.5rem;
-    flex-wrap: wrap; /* Garante que não quebre se a tela for muito pequena */
-    gap: 1rem; /* Espaço mínimo entre titulo e tag */
+    flex-wrap: wrap; 
+    gap: 1rem; 
 }
 
 .section-title { 
@@ -344,10 +325,9 @@ body.dark-theme .icon-sun { display: none; }
     width: 28px;
     height: 28px;
     flex-shrink: 0;
-    color: var(--github-text); /* Segue a cor do texto da seção dark */
+    color: var(--github-text); 
 }
 
-/* Filtros (Tags) */
 .filters-container {
     display: flex; 
     gap: 1rem; 
@@ -378,9 +358,7 @@ body.dark-theme .icon-sun { display: none; }
     border-color: var(--accent); 
 }
 
-/* =========================================
-   7. CERTIFICADOS (GRID)
-   ========================================= */
+/* 7. CERTIFICADOS (GRID) */
 .cert-grid {
     display: grid; 
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -440,7 +418,6 @@ body.dark-theme .icon-sun { display: none; }
     color: #fff; 
 }
 
-/* Controles (Carregar Mais/Menos) */
 .controls-container { 
     display: flex; 
     flex-direction: column; 
@@ -470,9 +447,7 @@ body.dark-theme .icon-sun { display: none; }
     transform: translateY(-2px); 
 }
 
-/* =========================================
-   8. GITHUB SECTION & SKELETON
-   ========================================= */
+/* 8. GITHUB SECTION & SKELETON */
 .github-section { 
     background-color: var(--github-bg); 
     color: var(--github-text); 
@@ -565,7 +540,7 @@ body.dark-theme .icon-sun { display: none; }
     100% { transform: translateX(100%); } 
 }
 
-/* --- SKILLS TAGS --- */
+/* SKILLS TAGS */
 .skills-wrapper {
     display: flex;
     flex-wrap: wrap;
@@ -580,7 +555,7 @@ body.dark-theme .icon-sun { display: none; }
     color: var(--text-primary);
     padding: 0.3rem 0.6rem;
     border-radius: 2px;
-    border: 1px solid transparent; /* Para não pular no hover */
+    border: 1px solid transparent; 
     transition: all 0.2s;
 }
 
@@ -594,17 +569,16 @@ body.dark-theme .icon-sun { display: none; }
 
 .section-title {
     display: flex;
-    align-items: center; /* Alinha ícone e texto na horizontal */
+    align-items: center; 
 }
 
 .skill-tag {
     display: flex;
     align-items: center;
     gap: 8px;
-    padding: 0.4rem 0.8rem; /* Aumentei um pouco o padding para acomodar o ícone */
+    padding: 0.4rem 0.8rem; 
 }
 
-/* Tamanho fixo para não ficarem gigantes */
 .skill-tag svg {
     width: 16px; 
     height: 16px;
@@ -612,9 +586,104 @@ body.dark-theme .icon-sun { display: none; }
     display: block;
 }
 
-/* =========================================
-   9. FOOTER
-   ========================================= */
+/* FEATURED PROJECTS GRID (FIXED) */
+.featured-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); 
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+    width: 100%;
+}
+
+.featured-card {
+    background: var(--bg-card);
+    border: 1px solid var(--bg-grid);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none !important; 
+    color: inherit; 
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    min-height: 280px; 
+}
+
+.featured-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-5px);
+    background-color: var(--bg-card-hover);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.featured-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; 
+    width: 4px; height: 100%;
+    background: var(--accent);
+    transform: scaleY(0); 
+    transition: transform 0.3s ease;
+}
+
+.featured-card:hover::before {
+    transform: scaleY(1); 
+}
+
+.featured-card h3 {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin: 1rem 0 0.5rem 0;
+}
+
+.featured-card p {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+/* Estilo da Tag de Categoria */
+.tag-category {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--accent);
+    background: rgba(15, 98, 254, 0.1);
+    padding: 4px 10px;
+    border-radius: 2px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+/* Container das tecnologias no rodapé do card */
+.card-techs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: auto; 
+    padding-top: 1rem;
+    border-top: 1px solid var(--bg-grid);
+}
+
+.card-techs span {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--text-meta);
+    background: var(--bg-body);
+    padding: 2px 6px;
+    border: 1px solid var(--bg-grid);
+}
+
+/* 9. FOOTER */
+
 .main-footer { 
     padding: 4rem 0; 
     background: var(--bg-body); 
@@ -627,30 +696,28 @@ body.dark-theme .icon-sun { display: none; }
     font-size: 0.75rem; 
 }
 
-/* =========================================
-   10. MOBILE / RESPONSIVO
-   ========================================= */
+/* 10. MOBILE RESPONSIVO */
 
 @media (max-width: 900px) {
-    /* --- HEADER & HERO --- */
+    
+    /* HEADER & HERO */
     .hero-section { 
         background: var(--bg-body); 
-        padding: 5rem 0 3rem 0; /* Espaço para o menu fixo não tapar */
-        text-align: left; /* Mantém alinhamento à esquerda (Estilo Desktop) */
+        padding: 5rem 0 3rem 0; 
+        text-align: left; 
     }
     
     .hero-wrapper { 
         display: flex; 
-        flex-direction: column-reverse; /* Foto sobe, Texto desce */
+        flex-direction: column-reverse; 
         gap: 2.5rem; 
     }
     
     .hero-text {
-        align-items: flex-start; /* Força alinhamento à esquerda */
+        align-items: flex-start; 
         width: 100%;
     }
 
-    /* Ajuste dos botões fixos para não atrapalhar */
     .theme-btn { top: 1rem; right: 1rem; }
     .lang-panel { top: 1rem; left: 1rem; padding: 0.3rem 0.5rem; }
 
@@ -658,53 +725,49 @@ body.dark-theme .icon-sun { display: none; }
     .hero-image {
         width: 100%;
         display: flex;
-        justify-content: center; /* Foto centralizada fica melhor */
+        justify-content: center; 
         margin-bottom: 1rem;
     }
     .photo-frame { 
-        max-width: 240px; /* Um pouco menor para mobile */
+        max-width: 240px; 
     }
 
-    /* --- PERFIL COM A LINHA AZUL (IGUAL DESKTOP) --- */
     .profile-info-block { 
-        /* RESTAURA A LINHA AZUL NA LATERAL */
         border-left: 3px solid var(--accent) !important; 
         border-top: none !important;
-        
-        padding-left: 1.5rem; /* Espaço entre linha e texto */
+        padding-left: 1.5rem; 
         padding-top: 0;
         margin-top: 2rem;
         margin-bottom: 2rem;
-        
-        align-items: flex-start; /* Alinha itens à esquerda */
+        align-items: flex-start; 
         display: flex; 
         flex-direction: column; 
         width: 100%;
     }
 
     .role-highlight {
-        font-size: 1.1rem; /* Ajuste leve de fonte */
+        font-size: 1.1rem; 
     }
 
     /* TAGS DE SKILLS */
     .skills-wrapper {
-        justify-content: flex-start; /* Alinha à esquerda junto com a linha */
+        justify-content: flex-start; 
     }
 
-    /* --- BOTÕES DE CONTATO --- */
+    /* BOTÕES DE CONTATO */
     .contact-grid { 
-        justify-content: flex-start; /* Alinha à esquerda */
+        justify-content: flex-start; 
         width: 100%;
         gap: 0.8rem;
     }
     
     .contact-btn {
-        width: 100%; /* Botões ocupam largura total para facilitar o toque */
-        justify-content: center; /* Texto do botão no meio */
-        max-width: none; /* Remove limite de largura */
+        width: 100%; 
+        justify-content: center; 
+        max-width: none; 
     }
 
-    /* --- TÍTULOS E TAGS DAS SEÇÕES --- */
+    /* TÍTULOS E TAGS DAS SEÇÕES */
     .section-header {
         flex-direction: column; 
         align-items: flex-start; 
@@ -722,16 +785,25 @@ body.dark-theme .icon-sun { display: none; }
         opacity: 0.8;
     }
 
-    /* --- GRIDS E LISTAS --- */
+    /* GRIDS E LISTAS */
     .cert-grid { grid-template-columns: 1fr; }
     
     /* GitHub Links */
     .project-link { padding: 1.5rem 0; }
     .proj-name { font-size: 1.1rem; }
-    /* Mantém a seta visível mas alinhada */
     .proj-icon { 
         display: block; 
         margin-left: 0.5rem; 
         min-width: 20px;
     }
+
+   .featured-grid {
+        grid-template-columns: 1fr; 
+    }
+    
+    .featured-card {
+        padding: 1.5rem;
+        min-height: auto; 
+    }
+
 }
